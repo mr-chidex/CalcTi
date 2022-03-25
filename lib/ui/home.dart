@@ -11,8 +11,20 @@ class TipCalculator extends StatefulWidget {
 class _TipCalculatorState extends State<TipCalculator> {
   double billAmount = 0.0;
   int percentage = 20;
-  int personCount = 0;
+  int personCount = 1;
   final Color _purple = HexColor("#5c00e6");
+
+
+
+  double getTip() {
+    double tip = billAmount * percentage/100;
+       return tip;
+  }
+
+  double getBill() {
+        double totalBill = billAmount + getTip();
+        return totalBill/personCount;
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -25,6 +37,7 @@ class _TipCalculatorState extends State<TipCalculator> {
           padding: const EdgeInsets.all(20.0),
           scrollDirection: Axis.vertical,
           children: <Widget>[
+            //Bill Section
             Container(
               alignment: Alignment.center,
               height: 200,
@@ -47,7 +60,7 @@ class _TipCalculatorState extends State<TipCalculator> {
                   Padding(
                     padding: const EdgeInsets.only(top: 8),
                     child: Text(
-                      "\$$billAmount",
+                      "\$${getBill().toStringAsFixed(2)}",
                       style: TextStyle(
                         fontSize: 35,
                         fontWeight: FontWeight.bold,
@@ -57,7 +70,7 @@ class _TipCalculatorState extends State<TipCalculator> {
                   )
                 ],
               ),
-            ), //Tip per person
+            ), //Bill Section
             Container(
               margin: const EdgeInsets.only(top: 20.0),
               padding: const EdgeInsets.all(10.0),
@@ -74,14 +87,18 @@ class _TipCalculatorState extends State<TipCalculator> {
                         const TextInputType.numberWithOptions(decimal: true),
                     style: TextStyle(
                       color: _purple,
+                      fontWeight: FontWeight.bold,
+                      fontSize: 16
                     ),
                     decoration: const InputDecoration(
-                      prefixText: "Bill Amount",
+                      prefixText: "Bill Amount  ",
                       prefixIcon: Icon(Icons.attach_money),
                     ),
                     onChanged: (String value) {
                       try {
-                        billAmount = double.parse(value);
+                        setState(() {
+                          billAmount = double.parse(value);
+                        });
                       } catch (ex) {
                         billAmount = 0.0;
                       }
@@ -179,7 +196,7 @@ class _TipCalculatorState extends State<TipCalculator> {
                       Padding(
                         padding: const EdgeInsets.fromLTRB(0, 18, 0, 18),
                         child: Text(
-                          "\$35",
+                          "\$${getTip().toStringAsFixed(2)}",
                           style: TextStyle(
                               color: _purple,
                               fontWeight: FontWeight.bold,
