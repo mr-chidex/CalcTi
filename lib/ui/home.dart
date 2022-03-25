@@ -10,10 +10,9 @@ class TipCalculator extends StatefulWidget {
 
 class _TipCalculatorState extends State<TipCalculator> {
   double billAmount = 0.0;
-  int percentage = 0;
+  int percentage = 20;
   int personCount = 0;
-
-  final Color _purple = HexColor("#6908D6");
+  final Color _purple = HexColor("#5c00e6");
 
   @override
   Widget build(BuildContext context) {
@@ -28,7 +27,7 @@ class _TipCalculatorState extends State<TipCalculator> {
           children: <Widget>[
             Container(
               alignment: Alignment.center,
-              height: 150,
+              height: 200,
               width: 150,
               margin: const EdgeInsets.only(bottom: 10.0),
               decoration: BoxDecoration(
@@ -45,17 +44,20 @@ class _TipCalculatorState extends State<TipCalculator> {
                         fontWeight: FontWeight.w500,
                         color: _purple),
                   ),
-                  Text(
-                    "\$$billAmount",
-                    style: TextStyle(
-                      fontSize: 35,
-                      fontWeight: FontWeight.bold,
-                      color: _purple,
+                  Padding(
+                    padding: const EdgeInsets.only(top: 8),
+                    child: Text(
+                      "\$$billAmount",
+                      style: TextStyle(
+                        fontSize: 35,
+                        fontWeight: FontWeight.bold,
+                        color: _purple,
+                      ),
                     ),
                   )
                 ],
               ),
-            ),
+            ), //Tip per person
             Container(
               margin: const EdgeInsets.only(top: 20.0),
               padding: const EdgeInsets.all(10.0),
@@ -85,6 +87,8 @@ class _TipCalculatorState extends State<TipCalculator> {
                       }
                     },
                   ),
+
+                  //Split section
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: <Widget>[
@@ -101,7 +105,7 @@ class _TipCalculatorState extends State<TipCalculator> {
                               height: 40,
                               padding:
                                   const EdgeInsets.fromLTRB(15.0, 5, 15.0, 5),
-                              margin: const EdgeInsets.all( 10),
+                              margin: const EdgeInsets.all(10),
                               decoration: BoxDecoration(
                                 color: _purple.withOpacity(0.1),
                               ),
@@ -153,15 +157,67 @@ class _TipCalculatorState extends State<TipCalculator> {
                               ),
                             ),
                             onTap: () {
-                             setState(() {
-                               personCount++;
-                             });
+                              setState(() {
+                                personCount++;
+                              });
                             },
                           )
                         ],
                       ),
                     ],
-                  ),
+                  ), //Split
+
+                  //Tip section
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: <Widget>[
+                      Text(
+                        "Tip",
+                        style: TextStyle(
+                            color: Colors.grey.shade700, fontSize: 17),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.fromLTRB(0, 18, 0, 18),
+                        child: Text(
+                          "\$35",
+                          style: TextStyle(
+                              color: _purple,
+                              fontWeight: FontWeight.bold,
+                              fontSize: 20),
+                        ),
+                      ),
+                    ],
+                  ), //Tip section
+
+                  //Slider
+                  Column(
+                    children: [
+                      Text(
+                          "\$$percentage%",
+                        style: TextStyle(
+                          color: _purple,
+                          fontWeight: FontWeight.bold,
+                          fontSize: 20
+                        ),
+                        
+                      ),
+                      Slider(
+                          value: percentage.toDouble(),
+                          min: 0,
+                          max: 100,
+                        divisions: 10,
+                        activeColor: _purple,
+                        inactiveColor: _purple.withOpacity(0.1),
+                        label: percentage.round().toString(),
+                          onChanged: (double value){
+                            setState(() {
+                              percentage = value.round();
+                            });
+
+                          },
+                      )
+                    ],
+                  )//Slider
                 ],
               ),
             )
