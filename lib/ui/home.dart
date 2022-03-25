@@ -48,12 +48,41 @@ class _TipCalculatorState extends State<TipCalculator> {
                        style:  TextStyle(
                          fontSize: 35,
                          fontWeight: FontWeight.bold,
-                           color: Colors.purpleAccent.shade700
+                           color: Colors.purpleAccent.shade700,
                        ),
                      )
                    ],
                 ),
               ),
+              Container(
+                margin: const EdgeInsets.only(top: 20.0),
+                padding: const EdgeInsets.all(10.0),
+                decoration: BoxDecoration(
+                  color: Colors.transparent,
+                  border: Border.all(
+                    color: Colors.blueGrey.shade100,
+                    style: BorderStyle.solid
+                  ),
+                  borderRadius: BorderRadius.circular(15.0),
+                ),
+                child: Column(
+                  children:  <Widget>[
+                    TextField(
+                      keyboardType: const TextInputType.numberWithOptions(decimal: true),
+                      style: const TextStyle(
+                        color: Colors.grey
+                      ),
+                      decoration: const InputDecoration(
+                        prefixText: "Bill Amount",
+                        prefixIcon: Icon(Icons.attach_money),
+                      ),
+                      onChanged: (String value){
+
+                      },
+                    )
+                  ],
+                ),
+              )
             ],
           ),
       ),
