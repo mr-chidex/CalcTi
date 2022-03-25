@@ -1,6 +1,15 @@
 # calculator
 
-A new Flutter project.
+Simple tip calculator
+
+# Demo
+
+- [View Demo](https://drive.google.com/file/d/1GjCp3DdbufMCD68bhF-jth2i8Afzq0Dx/view?usp=sharing)
+
+# Preview
+
+<img  alt="png" src="./assets/tip.png" />
+<img  alt="png" src="./assets/tip2.png" />
 
 ## Getting Started
 
