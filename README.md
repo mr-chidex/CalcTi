@@ -15,7 +15,7 @@ Simple tip calculator
 
 ## Clone this project
 
-    $ git https://github.com/mr-chidex/CalcTi.git
+    $ git clone https://github.com/mr-chidex/CalcTi.git
     $ cd CalcTi
     
 ## Show your support
