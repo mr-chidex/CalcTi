@@ -8,8 +8,8 @@ Simple tip calculator
 
 ## Preview
 <p float="left">
-  <img width="100" alt="png" src="./assets/tip.png" />
-<img width="100" alt="png" src="./assets/tip2.png" />
+  <img width="300" alt="png" src="./assets/tip.png" />
+<img width="300" alt="png" src="./assets/tip2.png" />
 
 </p>
 
