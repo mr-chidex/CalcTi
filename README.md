@@ -7,9 +7,11 @@ Simple tip calculator
 - [View Demo](https://drive.google.com/file/d/1GjCp3DdbufMCD68bhF-jth2i8Afzq0Dx/view?usp=sharing)
 
 ## Preview
+<p float="left">
+  <img width="100" alt="png" src="./assets/tip.png" />
+<img width="100" alt="png" src="./assets/tip2.png" />
 
-<img width="300" alt="png" src="./assets/tip.png" />
-<img width="300" alt="png" src="./assets/tip2.png" />
+</p>
 
 ## Clone this project
 
