@@ -2,14 +2,27 @@
 
 Simple tip calculator
 
-# Demo
+## Demo
 
 - [View Demo](https://drive.google.com/file/d/1GjCp3DdbufMCD68bhF-jth2i8Afzq0Dx/view?usp=sharing)
 
-# Preview
+## Preview
 
-<img  alt="png" src="./assets/tip.png" />
-<img  alt="png" src="./assets/tip2.png" />
+<img width="300" alt="png" src="./assets/tip.png" />
+<img width="300" alt="png" src="./assets/tip2.png" />
+
+## Clone this project
+
+    $ git https://github.com/mr-chidex/CalcTi.git
+    $ cd CalcTi
+    
+## Show your support
+
+Give a ⭐️ if you like this project!
+
+## Copyright
+
+Copyright (c) mr-chidex
 
 ## Getting Started
 
